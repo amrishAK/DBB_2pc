@@ -76,6 +76,8 @@ class SocketServer:
                         self._dataPipeline.Produce(msgJson['payload'])
                     elif msgJson['type'] == "connectRequest":
                         self._twoPhaseManager._particpants[client] = client
+					elif msgJson['type'] == "connectClose":
+                        del self._twoPhaseManager._particpants[client]
                     else: 
                         self._twoPhaseManager.HandlerIncomingStates(msgJson,client)
             except Exception as ex:
