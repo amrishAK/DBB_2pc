@@ -1,0 +1,8 @@
+flask
+flask_restful
+flask-cors
+dependency_injector
+pymongo
+requests
+JSON-log-formatter
+dnspython
